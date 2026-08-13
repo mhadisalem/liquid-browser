@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Liquid Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- نوار بالا شبیه Liquid Glass -->
+    <div class="top-bar glass">
+      <div class="url-bar">
+        <input type="text" id="urlInput" placeholder="جستجو در گوگل یا آدرس سایت..." autocomplete="off" enterkeyhint="go">
+        <button id="goBtn" class="icon-btn" aria-label="برو">→</button>
+      </div>
+      <div class="actions">
+        <button id="backBtn" class="icon-btn" aria-label="قبلی">‹</button>
+        <button id="forwardBtn" class="icon-btn" aria-label="بعدی">›</button>
+        <button id="reloadBtn" class="icon-btn" aria-label="بارگذاری مجدد">↻</button>
+        <button id="homeBtn" class="icon-btn" aria-label="خانه">⌂</button>
+        <button id="menuBtn" class="icon-btn" aria-label="منو">☰</button>
+      </div>
+    </div>
+
+    <!-- مرورگر -->
+    <iframe id="browser" class="browser-frame" src="https://www.google.com" allowfullscreen sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation"></iframe>
+
+    <!-- پنل تنظیمات -->
+    <div id="settingsPanel" class="settings-panel glass hidden">
+      <div class="settings-header">
+        <h3>تنظیمات</h3>
+        <button id="closeSettings" class="icon-btn small">✕</button>
+      </div>
+      
+      <div class="setting-group">
+        <label>تم رنگی</label>
+        <select id="themeSelect">
+          <option value="ios">آی‌اواس کلاسیک (Liquid Glass)</option>
+          <option value="dark">تاریک شیشه‌ای</option>
+          <option value="purple">بنفش مایع</option>
+          <option value="blue">آبی اقیانوسی</option>
+          <option value="green">سبز طبیعی</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label>شفافیت شیشه (<span id="blurValue">20</span>px)</label>
+        <input type="range" id="blurRange" min="8" max="40" value="20">
+      </div>
+
+      <div class="setting-group">
+        <label>موتور جستجو</label>
+        <select id="searchEngine">
+          <option value="google">گوگل</option>
+          <option value="duckduckgo">DuckDuckGo</option>
+          <option value="bing">بینگ</option>
+          <option value="yahoo">یاهو</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="homePageToggle" checked>
+          <span>صفحه شروع گوگل</span>
+        </label>
+      </div>
+
+      <div class="setting-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="darkModeAuto">
+          <span>حالت تاریک خودکار (شب)</span>
+        </label>
+      </div>
+
+      <button id="resetBtn" class="btn secondary">بازنشانی تنظیمات</button>
+      <button id="closeSettingsBtn" class="btn">بستن</button>
+    </div>
+
+    <!-- نوار پایین شبیه iOS -->
+    <div class="bottom-bar glass">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
