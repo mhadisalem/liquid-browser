@@ -1,0 +1,26 @@
+{
+  "name": "Liquid Browser",
+  "short_name": "Liquid",
+  "description": "مرورگر با طراحی Liquid Glass شبیه آی‌اواس",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#e0e7ff",
+  "theme_color": "#007AFF",
+  "orientation": "portrait",
+  "lang": "fa",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
